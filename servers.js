@@ -3,6 +3,18 @@ const PORT1 = 7000,
       PORT2 = 7500;
 
 let handleRequest = function(request, response) {
+  let port = parseInt(request.headers.host.slice(request.headers.host.length - 4));
+  // console.log(port);
+
+  switch (port) {
+    case 7000:
+      console.log("You're ugly");
+      break;
+    case 7500:
+      console.log("You're beautiful");
+      break;
+  }
+
   console.log("It Works!! Path Hit: " + request.url);
   response.end("It Works!! Path Hit: " + request.url);
 }
