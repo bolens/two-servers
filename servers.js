@@ -8,15 +8,15 @@ let handleRequest = function(request, response) {
 
   switch (port) {
     case 7000:
-      console.log("You're ugly");
+      response.end("You're ugly");
       break;
     case 7500:
-      console.log("You're beautiful");
+      response.end("You're beautiful");
       break;
   }
 
-  console.log("It Works!! Path Hit: " + request.url);
-  response.end("It Works!! Path Hit: " + request.url);
+  // console.log("It Works!! Path Hit: " + request.url);
+  // response.end("It Works!! Path Hit: " + request.url);
 }
 
 let server1 = http.createServer(handleRequest);
